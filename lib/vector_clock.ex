@@ -2,7 +2,7 @@ defmodule VectorClock do
   @moduledoc """
   Elixir implementation of vector clocks.
 
-  # About
+  ## About
 
   Vector clocks are used in distributed systems as a way of maintaining a
   logical ordering of events. A vector clock consists of a list of dots,
@@ -14,7 +14,7 @@ defmodule VectorClock do
   it has seen the effect of that message already by comparing it's vector clock
   with the received vector clock.
 
-  # Source
+  ## Source
 
   Based on the erlang version from
   [`:riak_core`](https://github.com/basho/riak_core/blob/develop/src/vclock.erl).
@@ -95,7 +95,7 @@ defmodule VectorClock do
 
   @doc """
   Checks if vector clock `va` strictly dominates vector clock `vb`.
-  
+
   A vector clock is said to dominate another when it's clock represents a later
   logical time than the other.
   """
@@ -240,7 +240,7 @@ defmodule VectorClock do
   or when the top-most dot is too old.  Entries are removed one-by-one
   off the top until neither of the two conditions are met.
 
-  # Options
+  ## Options
 
     * `:small_vclock` - max size for a vector clock to be not pruned.
     * `:young_vclock` - max difference between `now` and the timestamp on
