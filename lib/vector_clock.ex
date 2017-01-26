@@ -95,6 +95,7 @@ defmodule VectorClock do
 
   @doc """
   Checks if vector clock `va` strictly dominates vector clock `vb`.
+  
   A vector clock is said to dominate another when it's clock represents a later
   logical time than the other.
   """
@@ -202,7 +203,7 @@ defmodule VectorClock do
   end
 
   @doc """
-  Get all nodes in the vclock.
+  Get all nodes in the vector clock.
   """
   @spec all_nodes(t) :: [vclock_node]
   def all_nodes(vclock) do
@@ -213,7 +214,7 @@ defmodule VectorClock do
   @seconds_from_gregorian_base_to_epoch (@days_from_gregorian_base_to_epoch*24*60*60)
 
   @doc """
-  Timestamp for a vector clock.
+  Current timestamp for a vector clock.
   """
   @spec timestamp() :: timestamp
   def timestamp do
